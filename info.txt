@@ -1,0 +1,12 @@
+Pentru acest proiect, am ales sa estimez valoarea lui Pi folosind algoritmul de simulare Monte Carlo. Algoritmul ar trebui sa functioneze dupa ideea ca lucram intr-un plan 2D unde avem un patrat cu latura L = 1 si in interiorul acestui patrat vom avea un cerc cu raza R = 1. Generam puncte (x, y) random in patratul specificat mai sus si verificam numarul de puncte care sunt in interiorul cercului cat si numarul total de puncte generate.
+
+Stim ca aria unui patrat cu latura L = 1 este pow(1, 2) = 1, in timp ce aria unui cerc cu raza R = 1, este pi / 4. Acum, luand situatia in care avem un numar foarte mare de puncte generate, obtinem urmatoarea formula:
+aria_cercului / aria_patratului = numarul_de_puncte_generate_in_interiorul_cercului / numarul_total_de_puncte_generate * numarul_de_puncte_generate_in_interiorul_patratului
+
+Obtinem:
+pi = 4 * (numarul_de_puncte_generate_in_interiorul_cercului / numarul_de_puncte_generate_in_interiorul_patratului)
+
+Generam puncte (x, y) dupa care verificam conditia pow(x, 2) + pow(y, 2) <= 1.
+Daca da, incrementam numarul de puncte care apar in interiorul cercului.
+
+In algoritmul de simulare Monte Carlo, cu cat avem mai multe iteratii, cu atat avem o estimare mai precisa/corecta.
